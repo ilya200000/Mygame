@@ -10,9 +10,8 @@
 
     <application
         android:allowBackup="true"
-        android:label="My VPN Game"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:label="My VPN"
+        android:supportsRtl="true">
 
         <!-- ГЛАВНЫЙ ЭКРАН -->
         <activity
