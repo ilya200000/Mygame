@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:label="Starlink Bypass"
+        android:label="YOUTUBE VPN"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
 
         <activity 
@@ -18,7 +18,7 @@
         </activity>
 
         <service
-            android:name=".BypassVpnService"
+            android:name=".VPN YOUTUBE"
             android:permission="android.permission.BIND_VPN_SERVICE"
             android:exported="false">
             <intent-filter>
