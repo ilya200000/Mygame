@@ -1,0 +1,2 @@
+plugins { id 'com.android.application' }
+android { namespace 'com.starlink.bypass'; compileSdk 33; defaultConfig { applicationId 'com.starlink.bypass'; minSdk 24; targetSdk 33; versionCode 1; versionName '1.0' } }
