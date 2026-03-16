@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com">
+<manifest xmlns:android="http://schemas.android.com"
+    package="com.yourgame.vpn"> <!-- Замените на ваш ID пакета -->
+
+    <!-- Разрешения для интернета и состояния сети -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <application android:label="YT Bypass">
-        <activity android:name="com.starlink.bypass.MainActivity" android:exported="true">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Нужно для отображения уведомления о работе VPN (Android 13+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    
+    <!-- Нужно для автозапуска после перезагрузки устройства (опционально) -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Главный экран приложения -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="com.starlink.bypass.BypassVpnService" android:permission="android.permission.BIND_VPN_SERVICE" android:exported="false">
+
+        <!-- САМОЕ ВАЖНОЕ: Сервис VPN -->
+        <!-- Атрибут permission="android.permission.BIND_VPN_SERVICE" ОБЯЗАТЕЛЕН -->
+        <service
+            android:name=".MyVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
+
     </application>
 </manifest>
