@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com"
-    package="com.yourgame.vpn"> <!-- Замените на ваш ID пакета -->
+<manifest xmlns:android="http://schemas.android.com">
 
-    <!-- Разрешения для интернета и состояния сети -->
+    <!-- Разрешения -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
-    <!-- Нужно для отображения уведомления о работе VPN (Android 13+) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    
-    <!-- Нужно для автозапуска после перезагрузки устройства (опционально) -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BIND_VPN_SERVICE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Главный экран приложения -->
+        <!-- Главный экран -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -28,8 +25,7 @@
             </intent-filter>
         </activity>
 
-        <!-- САМОЕ ВАЖНОЕ: Сервис VPN -->
-        <!-- Атрибут permission="android.permission.BIND_VPN_SERVICE" ОБЯЗАТЕЛЕН -->
+        <!-- VPN Сервис -->
         <service
             android:name=".MyVpnService"
             android:permission="android.permission.BIND_VPN_SERVICE"
