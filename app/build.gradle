@@ -1,1 +1,32 @@
-// Root build file
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.starlink.bypass'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.starlink.bypass"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Здесь можно добавить библиотеки, если понадобятся
+}
