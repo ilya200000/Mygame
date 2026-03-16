@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com"
-    package="com.starlink.bypass">
+<manifest xmlns:android="http://schemas.android.com">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:allowBackup="true"
         android:label="Starlink Bypass"
         android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
 
